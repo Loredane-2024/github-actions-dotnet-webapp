@@ -19,10 +19,13 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Restore dependencies
+      working-directory: github4women
       run: dotnet restore
 
     - name: Build project
+      working-directory: github4women
       run: dotnet build --no-restore --configuration Release
 
-    - name: Run tests (if applicable)
+    - name: Run tests
+      working-directory: github4women
       run: dotnet test --no-build --verbosity normal
